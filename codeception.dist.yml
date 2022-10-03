@@ -1,0 +1,30 @@
+paths:
+  tests: tests
+  output: tests/_output
+  data: tests/_data
+  support: tests/_support
+  envs: tests/_envs
+actor_suffix: Tester
+modules:
+  enabled:
+    - Cli
+    - Asserts
+    - REST
+    - \Helper\ConfigHelper:
+        external_test_management_base_url: &url 'https://<your url>/index.php?/api/v1/'
+        external_test_management_username: '<your username>'
+        external_test_management_password: '<your pw>'
+        external_test_management_access_token: '12345'
+        api_action: '/add_test_result/'
+        test_run_id: '1'
+        status_code_pass: 1
+        status_code_fail: 2
+  config:
+    REST:
+      depends: PhpBrowser
+      url: *url
+      shortDebugResponse: 300
+    PhpBrowser:
+      url: *url
+      headers:
+        Content-Type: application/json

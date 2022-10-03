@@ -1,0 +1,14 @@
+{
+    "require": {
+        "codeception/codeception": "^4.2",
+        "codeception/module-webdriver": "^1.4",
+        "codeception/module-cli": "^1.1",
+        "codeception/module-asserts": "^1.3",
+        "codeception/module-rest": "*",
+        "codeception/module-phpbrowser": "*",
+        "guzzlehttp/guzzle": "*",
+        "enm1989/chromedriver": "*",
+        "php": "^8.0",
+        "ext-curl": "*"
+    }
+}
